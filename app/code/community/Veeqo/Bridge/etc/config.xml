@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Veeqo_Bridge>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Veeqo_Bridge>
     </modules>
     <admin>
@@ -33,7 +33,7 @@
                 </Veeqo_Bridge>
             </modules>
         </translate>
-    </adminhtml>   
+    </adminhtml>
     <global>
         <helpers>
             <veeqo>
@@ -74,8 +74,8 @@
     <default>
         <veeqo>
     		<general>
-                <validation_url>http://veeqo.com/channels/magento_webhook</validation_url>
+                <validation_url>http://www.veeqo.com/channels/magento_webhook</validation_url>
     		</general>
         </veeqo>
-	</default>    
-</config> 
+	</default>
+</config>
