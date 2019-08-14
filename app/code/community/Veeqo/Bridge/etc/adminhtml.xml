@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+		<menu>
+			<veeqo module="veeqo">
+				<title>Veeqo Bridge</title>
+				<sort_order>100</sort_order>
+                <action>veeqo/adminhtml_index</action>               
+			</veeqo>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<veeqo translate="title" module="veeqo">
+							<title>Veeqo Bridge</title>
+							<sort_order>10</sort_order>  							 
+						</veeqo>
+					</children>
+				</admin>
+			</resources>		
+		</acl>   
+</config> 

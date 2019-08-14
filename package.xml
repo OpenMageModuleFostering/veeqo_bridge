@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+    <name>veeqo_bridge</name>
+    <version>0.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Multi-Channel order and inventory management software, bulk ship orders with Royal Mail integration.</summary>
+    <description>&lt;p&gt;Multi-Channel order and inventory management software,  syncing your data across all your channels.&lt;/p&gt;&#xD;
+&#xD;
+&lt;h2&gt;Key Features &lt;/h2&gt;&#xD;
+&#xD;
+&lt;li&gt;Bulk ship orders and print &lt;strong&gt;Royal Mail&lt;/strong&gt; and FedEx labels. &lt;/li&gt;&#xD;
+&lt;li&gt; Web based, works on tablets/phones/Pc's and Mac's&lt;/li&gt;&#xD;
+&lt;li&gt;Create and send purchase orders to suppliers&lt;/li&gt;&#xD;
+&lt;li&gt;Multiple inventory locations and transfer items between locations.&lt;/li&gt;&#xD;
+&lt;li&gt; Sync inventory to your other marketplaces such as Amazon so you can manage stock in one place&lt;/li&gt;&#xD;
+&lt;li&gt;Download orders from Amazon and Magento to manage them all in one place and use advance tools like tags and custom filters &lt;/li&gt;&#xD;
+&lt;li&gt;Works with barcode scanners to search for products&lt;/li&gt;&#xD;
+&lt;li&gt; Beautiful to look at and very easy to use &lt;/li&gt;</description>
+    <notes>First stable release</notes>
+    <authors><author><name>Veeqo</name><user>Veeqo</user><email>helpme@veeqo.com</email></author></authors>
+    <date>2014-01-16</date>
+    <time>14:18:49</time>
+    <contents><target name="magecommunity"><dir><dir name="Veeqo"><dir name="Bridge"><dir name="Block"><dir name="Adminhtml"><file name="Veeqo.php" hash="715b2aa2ad291b4410fe9575ae593a77"/></dir></dir><dir name="Helper"><file name="Data.php" hash="11cc7e2958d7545424b4c94226e9bc5a"/></dir><dir name="Model"><file name="Installer.php" hash="a402167b5bb9981f0b65a97f5a7b0b5e"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="IndexController.php" hash="44cf0afc6fda8f333fc7b9bac068896a"/><file name="InstallController.php" hash="896718b4d7df17ec2a04cc18318b5281"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="5c0990f04a9dc2bdc17f1379ffd692da"/><file name="config.xml" hash="7052c54357b55bda2678545d8db7eb14"/></dir></dir></dir></dir></target><target name="mage"><dir><dir name="app"><dir name="etc"><dir name="modules"><file name="Veeqo_Bridge.xml" hash="b0020889060ad13cd00142fef74e8479"/></dir></dir></dir></dir></target><target name="magedesign"><dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="veeqo.xml" hash="cdd078a0e10be1d457ae3d8af723fea2"/></dir><dir name="template"><dir name="veeqo"><file name="veeqo.phtml" hash="5ac132fa5e2047feedf0b0a658307924"/></dir></dir></dir></dir></dir></dir></target><target name="mageskin"><dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="veeqo"><dir name="css"><file name="styles.css" hash="62c1eb55527467abd31c531561537352"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.6</min><max>6.0.0</max></php></required></dependencies>
+</package>

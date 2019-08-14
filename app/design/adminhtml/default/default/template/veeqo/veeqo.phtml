@@ -1,0 +1,45 @@
+<?php
+$btn_title = $this->__('Install Script');
+$text = $this->__('<p>Thank you for installing the Veeqo Magento Extension!</p><p>To complete the link between Magento and Veeqo you need to do the following:</p><ul><li>(1) Sign up for a free account on <a href="http://Veeqo.com" target="_blank" title="Veeqo">Veeqo.com</a></li><li>(2) Create Magento sales channel in Veeqo</li><li>(3) Copy the special URL Veeqo gives you after creating the sales channel and paste it in the field below and press "Install".</li><li>(4) All done, Veeqo will start syncing your products and orders, the first time might take 30 minutes</li></ul>');
+if (Mage::helper('veeqo')->getBridge2CartUrl()) {
+    $btn_title = $this->__('Re-Install/Update Script');
+    $text = $this->__('<p>Magento and Veeqo already connected</p><p>Your Magento store is already connected to <a href="http://Veeqo.com" target="_blank" title="Veeqo">Veeqo.com</a> and you do not need to do anything on this page.</p>');  
+}
+?>
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td><h3 class="head-veeqo"><?php echo $this->__('Veeqo Bridge') ?></h3></td>
+        </tr>
+    </table>
+</div>
+<div class="veeqo-container">
+    <div id="veeqo_messages"><?php echo $text?></div>
+    <div class="veeqo_uploader">
+        <form id="veeqo_install_form" method="post" action="<?php echo Mage::helper("adminhtml")->getUrl('veeqo/adminhtml_install/index')?>">
+            <div>
+                <input type="hidden" value="<?php echo $this->getFormKey()?>" name="form_key"/>
+            </div>
+            <div class="fieldset ">
+                <div class="label">  
+                    <label for="bridge2cart_url"><?php echo $this->__('Bridge2Cart Download Url')?>: </label>
+                </div>
+                <div class="value">
+                    <input id="bridge2cart_url" type="text" name="download_url" class="input-text required-entry validate-url" value="<?php echo Mage::helper('veeqo')->getBridge2CartUrl()?>"/>      
+                </div>
+            </div>
+            <div class="actions">   
+                <button id="bridge2cart_run" class="scalable" style="" onclick="installForm.submit();" type="button" title="<?php echo $btn_title?>">
+                    <span><span><span><?php echo $btn_title?></span></span></span>
+                </button>      
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+	Validation.add('validate-url', 'Please enter a valid URL. Protocol is required (http://, https:// or ftp://)', function(v) {
+	                v = (v || '').replace(/^\s+/, '').replace(/\s+$/, '');
+	                return Validation.get('IsEmpty').test(v) || /^(http|https|ftp):\/\/(([A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))(\.[A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))*)(:(\d+))?(\/[A-Z0-9~](([A-Z0-9_~-]|\.)*[A-Z0-9~]|))*\/?(.*)?$/i.test(v)
+	});
+        var installForm = new varienForm('veeqo_install_form', '');
+    </script>    
+</div>

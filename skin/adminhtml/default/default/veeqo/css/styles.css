@@ -1,0 +1,7 @@
+.veeqo-container {
+    padding:20px; background-color:#EAF7FF; border:1px solid #CCCCCC;
+}
+.veeqo-container .label,
+.veeqo-container .value {float:left; margin-right:10px;}
+#bridge2cart_url {width:450px;}
+#veeqo_messages {margin-bottom:20px;}
