@@ -56,7 +56,7 @@ class Veeqo_Bridge_Model_Installer
         }
 
         // Download the file from remote server to temporary file
-        $destinationFilePath = $dest_dir . DIRECTORY_SEPARATOR . $tmp_filename;        
+        $destinationFilePath = $dest_dir . DIRECTORY_SEPARATOR . $tmp_filename;
         $client = new Varien_Http_Client($remote_url, array('keepalive' => true));
         $client ->setUri($remote_url)->setMethod('GET');
         $response = $client->request();
@@ -68,17 +68,17 @@ class Veeqo_Bridge_Model_Installer
                 $fp = fopen($destinationFilePath, 'w');
                 file_put_contents($destinationFilePath, $response->getBody());
                 fclose($fp);
-                
+
                 // return the error message if download failed
                 if (!file_exists($destinationFilePath)) {
                     $result['status'] = 0;
                     $result['message'] = $this->__("Can't download the file from server.");
                     return $result;
                 }
-        
+
                 // Unzip temporary file to destination directory
                 try {
-        
+
                     $filter = new Zend_Filter_Decompress(array('adapter' =>
                             'Zend_Filter_Compress_Zip', 'options' => array('target' => $mage_root, )));
                     $filter->filter($destinationFilePath);
@@ -93,13 +93,13 @@ class Veeqo_Bridge_Model_Installer
             else
             {
                 $xml_response = simplexml_load_string($body);
-                $msg = 'Error code '.$xml_response->return_code.' - '.$xml_response->return_message;  
+                $msg = 'Error code '.$xml_response->return_code.' - '.$xml_response->return_message;
                 $result['status'] = 0;
                 $result['message'] = $this->__($msg);
                 return $result;
             }
         }
-        
+
         return $result;
     }
 
@@ -108,7 +108,7 @@ class Veeqo_Bridge_Model_Installer
         $validation_url = Mage::helper('veeqo')->getValidationUrl();
 
         $result = array('status' => null);
-        
+
         if (!$download_url) {
             $result['error_messages'] = $this->__('Bridge2CartUrl Download Url is empty');
             return $result;
@@ -138,7 +138,7 @@ class Veeqo_Bridge_Model_Installer
             "application/json;charset=UTF-8");
 
         $response = $client->request();
-        $body = $response->getRawBody();
+        $body = $response->getBody();
 
         $result = Mage::helper('core')->jsonDecode($body);
         $result['status'] = $response->getStatus();
