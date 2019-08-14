@@ -4,7 +4,7 @@
 			<veeqo module="veeqo">
 				<title>Veeqo Bridge</title>
 				<sort_order>100</sort_order>
-                <action>veeqo/adminhtml_index</action>               
+                <action>veeqo/adminhtml_index</action>
 			</veeqo>
 		</menu>
 		<acl>
@@ -13,10 +13,10 @@
 					<children>
 						<veeqo translate="title" module="veeqo">
 							<title>Veeqo Bridge</title>
-							<sort_order>10</sort_order>  							 
+							<sort_order>10</sort_order>
 						</veeqo>
 					</children>
 				</admin>
-			</resources>		
-		</acl>   
-</config> 
+			</resources>
+		</acl>
+</config>
