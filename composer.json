@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/veeqo_bridge",
+    "name": "openmage-module-fostering\/veeqo_bridge",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Multi-Channel order and inventory management software, bulk ship orders with Royal Mail integration.",
     "authors": [
